@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --content-fill: #326765;
+  --main-fill: #27253d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins';
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to left bottom,
+    #7da87b,
+    #9bbb8b,
+    #bace9d,
+    #d7e1b1,
+    #f5f5c6
+  );
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+body header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header img {
+  text-align: center;
+  width: 13rem;
+  margin: 2rem 0;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: transparent;
+  border: 1px solid var(--main-fill);
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.faq.active {
+  background-color: var(--content-fill);
+  -webkit-box-shadow: 5px 5px 34px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 34px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 34px -16px rgba(0, 0, 0, 0.75);
+  color: #fefefe;
+}
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 7rem;
+  color: #f5f5c6;
+  font-family: 'Font Awesome 6 Free';
+  opacity: 0.2;
+  z-index: 0;
+}
+.faq.active::before {
+  top: 80px;
+  color: #7da87b;
+  right: 0px;
+  opacity: 0.1;
+  transform: rotateY(-180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+  font-size: 1.5rem;
+  z-index: 9999999;
+}
+.faq-text {
+  font-weight: 400;
+  display: none;
+  margin: 20px 0 0;
+}
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+.faq.active .faq-toggle .fa-times {
+  color: #fefefe;
+  display: block;
+}
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #7da87b;
+}
